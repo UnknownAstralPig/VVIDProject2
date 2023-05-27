@@ -1,0 +1,152 @@
+body {
+    height: 100vh;
+    background-image: url(./img/background.png);
+    color: white;
+    overflow-y: hidden ;
+}
+h1 {
+    text-align: center;
+    padding-top: 40px;
+}
+main {
+    text-align: center;
+}
+main h1 {
+    margin-bottom: 140px;
+}
+input {
+    padding: 20px;
+    width: 250px;
+    background-color: black;
+    color: white;
+    margin-bottom: 7px;
+    border: 1px solid black;
+    font-size: 20px;
+}
+input::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+button {
+    width: 120px;
+    padding: 5px;
+    background:none;
+    cursor: pointer;
+}
+
+#submitButton {
+    padding: 20px;
+    width: 250px;
+    background-color: black;
+    color: white;
+    margin-bottom: 7px;
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+
+
+
+/* DB page */
+
+.window {
+    border: 2px solid red;
+    padding: 20px;
+    width: 290px;
+    text-align: center;
+    background-color:rgba(54, 54, 54, 0.9);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+h5 {
+    color: red;
+    font-size: 30px;
+    margin: 0;
+}
+.window p {
+    font-size: 18px;;
+}
+.add {
+    border: 2px solid green;
+    color: green;
+}
+.ignore {
+    border: 2px solid red;
+    color: red;
+}
+.add:hover {
+    background-color: green;
+    color: white;
+}
+.ignore:hover {
+    background-color: red;
+    color: white;
+}
+table {
+    width: 60%;
+    box-shadow: 1px 1px 30px rgb(105, 121, 159);
+    background-color: rgba(36, 42, 57, 0.9);
+    margin: 30px auto;
+    font-size: 28px;
+}
+th {
+    background-color: brown;
+}
+td {
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgb(105, 121, 159);
+    letter-spacing: 5px;
+    text-align: center;
+}
+.on {
+    color: green;
+}
+.off {
+    color: red;
+}
+.image-icon {
+    width: 40px;
+    cursor:pointer;
+    padding-top: 10px;
+}
+#image-hand {
+    width: 400px;
+    position: absolute;
+    left: 35%;
+    bottom: 100px;
+    box-shadow: 15px 15px 50px rgb(105, 121, 159);
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+
+.act-button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.delete-button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+/* Info page */
+.registrate {
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    padding: 15px;
+    margin-top: 20px;
+}
+.registrate:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 16px;
+}
+
+

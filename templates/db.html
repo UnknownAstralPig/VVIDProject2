@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles.css')}}">
+        <title>Data Base</title> 
+        <script src="{{url_for('static',filename='index.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Toyota Corolla</h1>
+        <div class="flex-container">
+            <table>
+                <tr>
+                    <th>N</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Image</th>
+                    <th>
+                        <form action="" method="post">
+                        <button id="add-button" class="act-button" type="submit" name="add-new-user">
+                            <img height="33px" src="{{url_for('static',filename='img/add.png')}}"/>
+                        </button>
+                        <button id="calibrate-button" class="act-button" type="submit" name="calibrate-button">
+                            <img height="33px" src="{{url_for('static',filename='img/calibrate.webp')}}"/>
+                        </button>
+                        </form>
+                    </th>
+                </tr>
+                {% for row in table %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td class="on status" id="{{ row[3] }}">{{ row[2] }}</td>
+                    <td><img onclick="" class="image-icon" src="{{url_for('static',filename='img/camera.png')}}"></td>
+                    <td>
+                        <form action="" method="post">
+                        <button class="delete-button" type="submit" name="delete-user" value="{{ row[3] }}">
+                            <img height="33px" src="{{url_for('static',filename='img/delete.png')}}"/>
+                        </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+        </table>
+            </div>
+        <!-- <div class="window show">
+            <h5>WARNING</h5>
+            <p>Попытка входа незарегистрированного пользователя.</p>
+            <p>Добавить пользователя в систему?</p>
+            <div class="buttons">
+                <button id="add" class="add">Добавить</button>
+                <button id="ignore" class="ignore">Игнорировать</button>
+            </div>
+        </div> -->
+    <script>
+        setInterval(function(){
+            let temp = document.getElementsByClassName("status")
+            const room_url = {{ url_for("status")|tojson }}
+            let elems = Array.from(temp)
+            fetch(room_url)
+            .then(response => response.json())
+            .then(data => {
+            for(const [key, value] of Object.entries(data))
+            {
+                elems.forEach(element =>
+                {
+                    if(element.id === key)
+                    {
+                        element.innerHTML = value
+                    }
+                })
+            }
+            })
+        }, 2000)
+    </script>
+    </body>
+</html>    
